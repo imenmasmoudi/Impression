@@ -10,7 +10,7 @@ import tn.iit.util.JDBCUtil;
 
 public class UtilisateurDAO {
 	public static void save(Utilisateur u) {
-		String query = "insert into Utilisateur(nom,prenom,login,motdepasse) values ('" + u.getNom() + "', '"
+		String query = "insert into Utilisateur(id,nom,prenom,login,motdepasse,role) values ('" + u.getNom() + "', '"
 				+ u.getPrenom() + "', '" + u.getLogin() + "','" + u.getPwd() + "')";
 		try {
 			JDBCUtil.getStatement().executeUpdate(query);
@@ -30,7 +30,7 @@ public class UtilisateurDAO {
 			e.printStackTrace();
 		}
 		if(rs.next()) {
-			v=new Utilisateur(rs.get)
+			v=new Utilisateur(rs.get);
 		}
 		
 		return u;

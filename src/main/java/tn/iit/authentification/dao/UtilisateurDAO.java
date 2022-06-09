@@ -29,9 +29,7 @@ public class UtilisateurDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(rs.next()) {
-			v=new Utilisateur(rs.get)
-		}
+		ResultSet rs;
 		
 		return u;
 	}

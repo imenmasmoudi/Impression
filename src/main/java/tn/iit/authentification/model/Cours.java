@@ -3,19 +3,19 @@ package tn.iit.authentification.model;
 public class Cours {
 	private int id;
 	private String nom = "";
-	private String id_utilisateur = "";
-	private int nbr_etudiant ;
+	private String idUtilisateur = "";
+	private int nbrEtudiant ;
 
 	public Cours() {
 		super();
 	}
 
-	public Cours(int id, String nom, String id_utilisateur, int nbr_etudiant ) {
+	public Cours(int id, String nom, String idUtilisateur, int nbrEtudiant ) {
 		super();
 		this.setId(id);
 		this.nom = nom;
-		this.id_utilisateur = id_utilisateur;
-		this.nbr_etudiant = nbr_etudiant;
+		this.idUtilisateur = idUtilisateur;
+		this.nbrEtudiant = nbrEtudiant;
 
 	}
 
@@ -28,20 +28,20 @@ public class Cours {
 		this.nom = nom;
 	}
 
-	public String getId_utilisateur() {
-		return id_utilisateur;
+	public String getdUtilisateur() {
+		return idUtilisateur;
 	}
 
-	public void setId_utilisateur(String id_utilisateur) {
-		this.id_utilisateur = id_utilisateur;
+	public void setIdUtilisateur(String idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
-	public int getNbr_etudiant() {
-		return nbr_etudiant;
+	public int getNbrEtudiant() {
+		return nbrEtudiant;
 	}
 
-	public void setNbr_etudiant(int nbr_etudiant) {
-		this.nbr_etudiant = nbr_etudiant;
+	public void setNbrEtudiant(int nbrEtudiant) {
+		this.nbrEtudiant = nbrEtudiant;
 	}
 
 	public int getId() {

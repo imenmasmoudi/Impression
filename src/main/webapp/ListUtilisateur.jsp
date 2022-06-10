@@ -104,12 +104,12 @@
                 List<Utilisateur> list_u = (List<Utilisateur>) request.getAttribute("listutilisateur");
                                 
                 int i = 0;
-                
+                RoleDAO dao = new RoleDAO();
                 for (utilisateur a : list_u) {
-                    Niveau n = ndao.getNiveauByID(a.getId_niveau());
+                	Role d = ddao.getRoleByID(a.getId_departement());
                     Utilisateur e = edao.getUtilisateurByID(a.getId_Utilisateur());
                     i++;
-                    out.print("<tr><td>" + i +"</td><td>"+a.getPrenom() + "</td><td>"+a.getNom() + "</td><td>"+a.getAdresse() + "</td><td>"+a.getEmail() + "</td><td>"+d.getPhone() + "</td><td>"+n.getPhone()+ "</td><td>"+e.getRole() + "</td><td><a class='btn btn-danger mx-1' href=\"./EnseignantController?action=remove&id="+a.getId()+"\">Supprimer</a><a class='btn btn-primary mx-1' href=\"./EnseignantController?action=edit&id="+a.getId()+"\">Modifier</a></td></tr>");
+                    out.print("<tr><td>" + i +"</td><td>"+a.getPrenom() + "</td><td>"+a.getNom() + "</td><td>"+a.getAdresse() + "</td><td>"+a.getEmail() + "</td><td>"+d.getPhone() + "</td><td>"+n.getPhone()+ "</td><td>"+e.getRole() + "</td><td><a class='btn btn-danger mx-1' href=\"./AdminController?action=remove&id="+a.getId()+"\">Supprimer</a><a class='btn btn-primary mx-1' href=\"./AdminController?action=edit&id="+a.getId()+"\">Modifier</a></td></tr>");
     
                 }
             %>

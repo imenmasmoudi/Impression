@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import tn.iit.authentification.dao.RoleDAO;
 import tn.iit.authentification.model.Utilisateur;
 
 /**
@@ -45,6 +46,7 @@ public class AuthController extends HttpServlet {
 		Utilisateur currentUser = null;
 		String login = request.getParameter("login");
 		String pwd = request.getParameter("password");
+		RoleDAO gdao = new RoleDAO();
 		ServletContext application = getServletContext();
 		HttpSession session = request.getSession();
 		List<Utilisateur> liste = (List<Utilisateur>) application.getAttribute("listeUsers");

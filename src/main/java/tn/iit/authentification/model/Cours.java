@@ -4,13 +4,13 @@ public class Cours {
 	private int id;
 	private String nom = "";
 	private String idUtilisateur = "";
-	private int nbrEtudiant ;
+	private int nbrEtudiant;
 
 	public Cours() {
 		super();
 	}
 
-	public Cours(int id, String nom, String idUtilisateur, int nbrEtudiant ) {
+	public Cours(int id, String nom, String idUtilisateur, int nbrEtudiant) {
 		super();
 		this.setId(id);
 		this.nom = nom;
@@ -19,7 +19,6 @@ public class Cours {
 
 	}
 
-	
 	public String getNom() {
 		return nom;
 	}

@@ -6,6 +6,7 @@
 package tn.iit.authentification.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tn.iit.authentification.model.Cours;
+import tn.iit.authentification.model.Impression;
 import tn.iit.authentification.dao.CoursDAO;
+import tn.iit.authentification.dao.ImpressionDAO;
 
 
 /**
@@ -34,7 +37,8 @@ public class CoursController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        CoursDAO mdao = new CoursDAO();  
+        CoursDAO mdao = new CoursDAO(); 
+        ImpressionDAO ms = new ImpressionDAO();
         
 //        String action = request.getParameter("action");
         String iduser = request.getParameter( "id_utilisateur" ); 
@@ -44,6 +48,17 @@ public class CoursController extends HttpServlet {
         RequestDispatcher dispatch = request.getRequestDispatcher("./listeCours.jsp");
         request.setAttribute("listecours", list);
         dispatch.forward(request, response);
+    	if (request.getParameter("action").equalsIgnoreCase("ajoutImpression")) {
+    		Impression imp=new Impression(0,Integer.valueOf(request.getParameter( "id_utilisateur" )).intValue(), Integer.valueOf(request.getParameter( "nbr_copie" )).intValue(), (java.sql.Date) new Date(),request.getParameter("id_Cours"));
+    		ms.ajoutPDF(imp);
+            
+        }
+    	else if (request.getParameter("action").equalsIgnoreCase("ajoutPdf")) {
+            int idCours = (Integer.parseInt(request.getParameter("id")));
+            request.setAttribute("idCours", idCours);
+            RequestDispatcher dispatchImpression = request.getRequestDispatcher("./ajoutPDF.jsp");
+            dispatchImpression.forward(request, response);
+    	}
         
     }
 

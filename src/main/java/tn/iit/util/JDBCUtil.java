@@ -18,4 +18,8 @@ public class JDBCUtil {
 		}
 		return stmt;
 	}
+	public String getUserId() {
+		  return session.getUserID();
+		}
+
 }

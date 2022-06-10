@@ -25,13 +25,14 @@ public class UtilisateurDAO {
 		String query = "select * from Utilisateur where login='"+u.getLogin()+"' and motdepasse='"+u.getPwd()+"'";
 		try {
 			ResultSet rs= JDBCUtil.getStatement().executeQuery(query);
+			if(rs.next()) {
+			u = new Utilisateur(rs.get);
+		}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(rs.next()) {
-			v=new Utilisateur(rs.get)
-		}
+		
 		
 		return u;
 	}

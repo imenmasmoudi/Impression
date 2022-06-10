@@ -44,7 +44,7 @@ public class ImpressionController extends HttpServlet {
         String action = request.getParameter("action");
         List<Impression> list = impressionDAO.getAll();
         
-    	if (action.equalsIgnoreCase("listedepartement")) {
+    	if (action.equalsIgnoreCase("listedemande")) {
 
             //List<Grade> list = gs.getAll();
             RequestDispatcher dispatch = request.getRequestDispatcher("./dashboardAgentTirage.jsp");

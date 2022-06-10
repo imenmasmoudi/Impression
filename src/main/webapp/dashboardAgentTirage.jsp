@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="tn.iit.authentification.model.Impression"%>
+    <%@page import="tn.iit.authentification.dao.ImpressionDAO"%>
+    <%@page import="java.util.List"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +34,7 @@
                 List<Impression> list = (List<Impression>) request.getAttribute("listedemande");
 
                 int i = 0;
-                ImpressionDAO id = new ImpressionDAODAO();
+                ImpressionDAO id = new ImpressionDAO();
                 //List<Enseignant> list2 = (List<Enseignant>) ed.getEnseignants();
                 
                 for (Impression a : list) {
